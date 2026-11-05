@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: light; -webkit-tap-highlight-color: transparent; }
+  html.dark { color-scheme: dark; }
+  body { @apply bg-slate-50 font-sans text-slate-800 antialiased dark:bg-navy-950 dark:text-slate-200; overflow-x: hidden; }
+  :focus-visible { @apply outline-none ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-navy-950; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm sm:p-5 dark:border-navy-800 dark:bg-navy-900; }
+  .btn { @apply inline-flex min-h-[40px] items-center justify-center gap-2 rounded-xl px-4 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-emerald-600 text-white hover:bg-emerald-700; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-navy-700 dark:bg-navy-800 dark:text-slate-200 dark:hover:bg-navy-700; }
+  .btn-danger { @apply btn bg-coral-600 text-white hover:bg-coral-700; }
+  .btn-ghost { @apply btn text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-navy-800; }
+  .btn-icon { @apply inline-flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-navy-800; }
+  .label { @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300; }
+  .input { @apply block min-h-[42px] w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 dark:border-navy-700 dark:bg-navy-800 dark:text-slate-100 dark:placeholder:text-slate-500; }
+  .input[aria-invalid='true'] { @apply border-coral-500; }
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+  .badge-income { @apply badge bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300; }
+  .badge-expense { @apply badge bg-coral-100 text-coral-700 dark:bg-coral-500/15 dark:text-coral-400; }
+  .badge-neutral { @apply badge bg-slate-100 text-slate-600 dark:bg-navy-800 dark:text-slate-300; }
+  .th { @apply whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400; }
+  .td { @apply px-4 py-3 text-sm; }
+  .page-title { @apply text-xl font-bold text-navy-900 sm:text-2xl dark:text-white; }
+}
